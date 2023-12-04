@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.content {
+  min-height: calc(100vh - 90px - 80px);
+}
+
+.navbar {
+  background-color: #007BFF; /* Измените цвет на желаемый */
+  padding-left: 20px; /* Добавьте отступ слева */
+ }
