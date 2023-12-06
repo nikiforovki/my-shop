@@ -3,9 +3,10 @@ import { useNavigate } from 'react-router-dom';
 
 // Объект с данными пользователей
 const users = {
- User1: 'pass1',
- User2: 'pass2',
-};
+  User1: { name: 'User1', password: 'pass1' },
+  User2: { name: 'User2', password: 'pass2' },
+ };
+ 
 
 const Login = () => {
  const [username, setUsername] = useState('');
@@ -19,15 +20,17 @@ const Login = () => {
   setPassword(event.target.value);
  }
  }
-
+ 
  const handleSubmit = (event) => {
- event.preventDefault();
- if (users[username] === password) {
-  navigate('/Profile');
- } else {
-  alert('Неверные учетные данные');
+  event.preventDefault();
+  if (users[username] && users[username].password === password) {
+    navigate('/Profile');
+  } else {
+    alert('Неверные учетные данные');
+  }
  }
- }
+ 
+ 
 
  return (
  <form style={{ paddingTop: '50px', marginLeft: '20px' }} onSubmit={handleSubmit}>

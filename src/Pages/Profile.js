@@ -2,9 +2,6 @@ import React, { useEffect } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import useLocalStorage from '../useLocalStorage.js';
 
-
-
-
 const Profile = () => {
  const location = useLocation();
  const [orders, setOrders] = useLocalStorage('orders', []); // Используем useLocalStorage вместо useState
@@ -29,7 +26,7 @@ const Profile = () => {
 
  return (
    <div>
-     <h1>Profoo</h1>
+     <h1>Proff</h1>
      {user && <p>Welcome, {user.name}</p>} {/* Отображаем имя пользователя */}
      <h2>Заказы</h2>
      <ul>
