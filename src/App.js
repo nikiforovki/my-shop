@@ -1,6 +1,8 @@
-import Heder from "../../components/Header";
-import Main from "../../components/Main"
-import Footer from "../../components/Footer";
+import Heder from "./components/Header";
+import Main from "./components/Main"
+import Footer from "./components/Footer";
+
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -14,3 +16,6 @@ function App() {
 }
 
 export default App;
+
+
+

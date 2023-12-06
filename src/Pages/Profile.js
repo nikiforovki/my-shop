@@ -1,9 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
+import useLocalStorage from '../useLocalStorage.js';
+
+
+
 
 const Profile = () => {
  const location = useLocation();
- const [orders, setOrders] = useState([]);
+ const [orders, setOrders] = useLocalStorage('orders', []); // Используем useLocalStorage вместо useState
+ const [user, setUser] = useLocalStorage('user', null); // Используем кастомный хук
  const [searchParams, setSearchParams] = useSearchParams();
 
  useEffect(() => {
@@ -15,26 +20,28 @@ const Profile = () => {
  }, [location]);
 
  const handleDelete = (orderId) => {
- setOrders(prevOrders => prevOrders.filter(order => order.id !== orderId));
- const newOrders = JSON.stringify(orders.filter(order => order.id !== orderId));
- searchParams.set('orders', encodeURIComponent(newOrders));
+ const newOrders = orders.filter(order => order.id !== orderId);
+ setOrders(newOrders);
+ const newOrdersString = JSON.stringify(newOrders);
+ searchParams.set('orders', encodeURIComponent(newOrdersString));
  setSearchParams(searchParams);
  };
 
  return (
- <div>
- <h1>Profile</h1>
- <h2>Заказы</h2>
- <ul>
- {orders.map(order => (
- <li key={order.id}>
- {order.description}
- <button onClick={() => handleDelete(order.id)}>Отменить</button>
- </li>
- ))}
- </ul>
- </div>
- );
+   <div>
+     <h1>Profoo</h1>
+     {user && <p>Welcome, {user.name}</p>} {/* Отображаем имя пользователя */}
+     <h2>Заказы</h2>
+     <ul>
+       {orders.map(order => (
+         <li key={order.id}>
+           {order.description}
+           <button onClick={() => handleDelete(order.id)}>Отменить</button>
+         </li>
+       ))}
+     </ul>
+   </div>
+ ); 
 };
 
 export default Profile;
