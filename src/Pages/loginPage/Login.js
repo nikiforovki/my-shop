@@ -27,7 +27,7 @@ const Login = () => {
  const handleSubmit = (event) => {
   event.preventDefault();
   if (users[username] && users[username].password === password) {
-    setUser(users[username]); // Обновляем состояние user
+    setUser(users[username]);
     navigate('/Profile');
   } else {
     alert('Неверные учетные данные');

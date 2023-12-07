@@ -4,9 +4,9 @@ import useLocalStorage from './loginPage/useLocalStorage.js';
 
 const Profile = () => {
  const location = useLocation();
- const navigate = useNavigate(); // Импортируем useNavigate вместо useHistory
- const [orders, setOrders] = useLocalStorage('orders', []); // Используем useLocalStorage вместо useState
- const [user, setUser] = useLocalStorage('user', null); // Используем кастомный хук
+ const navigate = useNavigate();
+ const [orders, setOrders] = useLocalStorage('orders', []);
+ const [user, setUser] = useLocalStorage('user', null);
  const [searchParams, setSearchParams] = useSearchParams();
 
  useEffect(() => {
@@ -26,8 +26,8 @@ const Profile = () => {
  };
 
  const handleLogout = () => {
- setUser(null); // Обнуляем состояние user
- navigate('/'); // Перенаправляем пользователя на главную страницу
+ setUser(null); 
+ navigate('/'); 
  };
 
  return (
