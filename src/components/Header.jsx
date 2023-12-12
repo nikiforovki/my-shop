@@ -3,10 +3,11 @@ import { Navbar, Container, Nav, Form } from 'react-bootstrap'
 import logo from './logo123.png'
 import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
 import Home from '../Pages/Home'
-import Profile from '../Pages/Profile'
+import Profile from '../Pages/Profile/Profile.tsx'
 import Catalog from '../Pages/Catalog'
-import Login from '../Pages/loginPage/Login'
-// import Footer from "../components/Footer";
+import Login from '../Pages/loginPage/Login.tsx'
+
+
 
 export default class Header extends Component {
  render() {

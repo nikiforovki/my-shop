@@ -1,0 +1,38 @@
+.form {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   width: 50%; /* задайте желаемую ширину */
+   margin: auto; /* выравнивание по центру */
+  }
+
+  .input, .label {
+   display: block;
+   width: 100%; /* занимает всю ширину родительского элемента */
+  }
+  
+  .input {
+   margin-bottom: 20px; /* добавляет пространство под каждым полем ввода */
+   padding: 10px;
+   border-radius: 10px;
+  }
+  
+  .title {
+   text-align: center;
+  }
+  
+  .submit {
+   background-color: #171718;
+   color: white;
+   border: none;
+   padding: 10px 50px;
+   border-radius: 10px;
+   cursor: pointer;
+  }
+  
+  ::placeholder {
+   color: #5c5b5b;
+   font-size: 14px;
+  }
+  
