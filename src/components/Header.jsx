@@ -6,6 +6,7 @@ import Home from '../Pages/Home'
 import Profile from '../Pages/Profile/Profile.tsx'
 import Catalog from '../Pages/Catalog'
 import Login from '../Pages/loginPage/Login.tsx'
+import Product from '../Product/Product.tsx'
 
 
 
@@ -24,6 +25,7 @@ export default class Header extends Component {
       <a class="nav-item nav-link" href="/catalog">Catalog</a>
       <a class="nav-item nav-link" href="/profile">Profile</a>
       <a class="nav-item nav-link" href="/login">Login</a>
+      <a class="nav-item nav-link" href="/product">Product</a>
       
     </div>
   </div>
@@ -34,6 +36,7 @@ export default class Header extends Component {
       <Route exact path="/catalog" element={<Catalog/>}/>
       <Route exact path="/profile" element={<Profile/>}/>
       <Route exact path="/login" element={<Login/>}/>
+      <Route exact path="/product" element={<Product/>}/>
       </Routes>
     </Router>
     {/* <Footer /> */}

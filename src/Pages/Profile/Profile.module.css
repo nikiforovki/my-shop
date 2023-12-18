@@ -1,12 +1,46 @@
 .center {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     height: 100vh;
-   }    
-   
-   .zakaz {
-    text-align: center;
    }
    
+   .zakaz {
+    position: fixed; /* или absolute */
+    top: 150px;
+   }
+   
+   ul {
+    list-style: none;
+    padding: 0;
+   }
+   
+   li {
+    margin-bottom: 10px;
+   }
+   
+   .welcomeMessage {
+    position: fixed; /* или absolute */
+    top: 60px;
+    left: 20px;
+    color: rgb(13, 13, 14);
+ }
+ 
+
+ .myClass {
+    position: fixed; /* или absolute */
+    top: 90px;
+    left: 20px;
+    color: rgb(225, 225, 230);
+    background-color: rgb(17, 17, 17);
+    border-radius: 10px;
+ }
+
+
+ .nizbutton {
+   color: rgb(225, 225, 230);
+    background-color: rgb(17, 17, 17);
+    border-radius: 10px;
+   
+ }
