@@ -1,3 +1,3 @@
 import { createSlice }  from "@reduxjs/toolkit"
 
-const creatSlice
+const createSlice = createSlice;
