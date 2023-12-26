@@ -17,6 +17,11 @@
     "./src/**/*", "./Globals.d.ts"
   ]
  }
+ {
+  "compilerOptions": {
+    "resolveJsonModule": true
+  }
+ }
  
 
  

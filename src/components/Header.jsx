@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import { Navbar, Container, Nav, Form } from 'react-bootstrap'
 import logo from './logo123.png'
 import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
-import Home from '../Pages/Home'
+import Home from '../Pages/Home.tsx'
 import Profile from '../Pages/Profile/Profile.tsx'
 import Catalog from '../Pages/Catalog'
 import Login from '../Pages/loginPage/Login.tsx'
+import Product from '../Pages/Product/Product.tsx'
 
 
 
@@ -24,6 +25,7 @@ export default class Header extends Component {
       <a class="nav-item nav-link" href="/catalog">Catalog</a>
       <a class="nav-item nav-link" href="/profile">Profile</a>
       <a class="nav-item nav-link" href="/login">Login</a>
+      <a class="nav-item nav-link" href="/Product">Product</a>
       
     </div>
   </div>
@@ -34,6 +36,7 @@ export default class Header extends Component {
       <Route exact path="/catalog" element={<Catalog/>}/>
       <Route exact path="/profile" element={<Profile/>}/>
       <Route exact path="/login" element={<Login/>}/>
+      <Route exact path="/Product" element={<Product/>}/>
       </Routes>
     </Router>
     {/* <Footer /> */}

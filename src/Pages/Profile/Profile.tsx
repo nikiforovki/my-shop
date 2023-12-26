@@ -1,14 +1,7 @@
 import React, { useEffect } from 'react';
-// import React, { useEffect, ChangeEvent, FormEvent } from 'react';
 import { useLocation, useSearchParams, useNavigate } from 'react-router-dom';
 import useLocalStorage from '../loginPage/useLocalStorage.js';
 import styles from './Profile.module.css';
-
-// import styles from '../Pages/Profile/Profile.module.css'
-
-
-
-
 
 interface Order {
  id: string;
@@ -28,45 +21,43 @@ const Profile: React.FC = () => {
  const [searchParams, setSearchParams] = useSearchParams();
 
  useEffect(() => {
-  const params = new URLSearchParams(location.search);
-  const ordersParam = params.get('orders');
-  if (ordersParam) {
-    setOrders(JSON.parse(decodeURIComponent(ordersParam)));
-  }
+ const params = new URLSearchParams(location.search);
+ const ordersParam = params.get('orders');
+ if (ordersParam) {
+   setOrders(JSON.parse(decodeURIComponent(ordersParam)));
+ }
 }, [location, setOrders]);
 
-
  const handleDelete = (orderId: string) => {
-   const newOrders = orders.filter(order => order.id !== orderId);
-   setOrders(newOrders);
-   const newOrdersString = JSON.stringify(newOrders);
-   searchParams.set('orders', encodeURIComponent(newOrdersString));
-   setSearchParams(searchParams);
+ const newOrders = orders.filter(order => order.id !== orderId);
+ setOrders(newOrders);
+ const newOrdersString = JSON.stringify(newOrders);
+ searchParams.set('orders', encodeURIComponent(newOrdersString));
+ setSearchParams(searchParams);
  };
 
  const handleLogout = () => {
-   setUser(null); 
-   navigate('/'); 
+ setUser(null); 
+ navigate('/'); 
  };
 
  return (
-  <div className="center">
-  {user && <p>Welcome, {user.name}</p>}
-  {user && <button onClick={handleLogout}>Выйти</button>}
-  <h1 className={styles.zakaz}>Заказы</h1>
-  <ul>
-    {orders.map(order => (
-      <li key={order.id}>
-        {order.description}
-        {order.date && <p>Date: {order.date.toString()}</p>}
-        <button onClick={() => handleDelete(order.id)}>Отменить</button>
-      </li>
-    ))}
-  </ul>
-  </div>
+ <div className="center">
+ {user && <p>Welcome, {user.name}</p>}
+ {user && <button onClick={handleLogout}>Выйти</button>}
+ <h1 className={styles.zakaz}>Заказы</h1>
+ <ul>
+   {orders.map(order => (
+     <li key={order.id}>
+       {order.description}
+       {order.date && <p>Date: {order.date.toString()}</p>}
+       <button onClick={() => handleDelete(order.id)}>Отменить</button>
+     </li>
+   ))}
+ </ul>
+ </div>
  );
 };
 
 export default Profile;
-
 
